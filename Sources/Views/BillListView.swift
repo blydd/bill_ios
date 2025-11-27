@@ -28,8 +28,9 @@ struct BillListView: View {
         Group {
             if billViewModel.bills.isEmpty {
                 EmptyStateView(
-                    message: "还没有账单记录",
-                    systemImage: "doc.text"
+                    icon: "doc.text",
+                    title: "暂无账单",
+                    message: "点击右上角的 + 按钮创建第一条账单记录"
                 )
             } else {
                 List {

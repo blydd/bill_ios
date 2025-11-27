@@ -4,16 +4,12 @@ import PackageDescription
 let package = Package(
     name: "TagBasedExpenseTracker",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v12)
+        .iOS(.v15)
     ],
     products: [
         .library(
             name: "TagBasedExpenseTracker",
-            targets: ["TagBasedExpenseTracker"]),
-        .executable(
-            name: "ExpenseTrackerApp",
-            targets: ["ExpenseTrackerApp"])
+            targets: ["TagBasedExpenseTracker"])
     ],
     dependencies: [
         // SwiftCheck for property-based testing
@@ -23,13 +19,7 @@ let package = Package(
         .target(
             name: "TagBasedExpenseTracker",
             dependencies: [],
-            path: "Sources",
-            exclude: ["App.swift"]),
-        .executableTarget(
-            name: "ExpenseTrackerApp",
-            dependencies: ["TagBasedExpenseTracker"],
-            path: "Sources",
-            sources: ["App.swift"]),
+            path: "Sources"),
         .testTarget(
             name: "TagBasedExpenseTrackerTests",
             dependencies: [
